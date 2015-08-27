@@ -47,14 +47,20 @@
       </div>
     </nav>
 -->
-    <div class="container-fluid content p-lg">
-      <div class="row">
+    <div class="container-fluid content">
+      <div class="row hidden-lg hidden-md">
+        <div class="col-sm-12 col-xs-12 sf-markets-carousel sf-markets-carousel-sm nopadding">
+
+        </div>
+      </div>
+      <div class="row row-eq-height">
         <!-- Left container, carousel -->
-        <div class="col-lg-8">
+        <div class="col-lg-8 col-md-8 hidden-sm hidden-xs sf-markets-carousel nopadding">
+
         </div>
         <!-- Right container, sign in/up forms -->
-        <div class="col-lg-4">
-          <img class="m-b-lg" src="img/sf-logo.png">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  p-lg">
+          <img class="m-b-lg hidden-sm hidden-xs" src="img/sf-logo.png">
           <p class="m-b-md">Simply register for a free account and earn PayOff Credits® from your everyday shopping to pay down your bills and debts every month.</p>
 
           <!-- Sign In OR Up -->
@@ -67,7 +73,7 @@
               <label name="email"></label>
               <input type="text" name="email" placeholder="Enter email address">
               <div class="btn primary-btn m-t-lg full-width">Sign Up</div>
-              <div class="btn fb-btn m-t-sm m-b-lg full-width"><i class="fa fa-facebook-square"></i> Sign Up with Facebook</div>
+              <div class="btn fb-btn m-t-sm m-b-xl full-width"><i class="fa fa-facebook-square"></i> Sign Up with Facebook</div>
             </div>
             <div id="signin">
               <label name="username"></label>
@@ -84,10 +90,10 @@
     <!-- Footer -->
     <footer class="p-lg">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <img class="m-b-md" src="img/sf-logo-white.png" >
           <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
               <ul>
                 <li>About Us</li>
                 <li>Blog</li>
@@ -95,18 +101,18 @@
                 <li>Return Policy</li>
               </ul>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
               <ul>
-                <li>About Us</li>
-                <li>Blog</li>
-                <li>Privacy Policy</li>
-                <li>Return Policy</li>
+                <li>FAQ</li>
+                <li>Careers</li>
+                <li>Contact Us</li>
+                <li>Copyright ©Shopperfund 2015</li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="pull-right">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="pull-right social-icons">
             <i class="fa fa-twitter-square"></i> <i class="fa fa-facebook-square"></i> <i class="fa fa-linkedin-square"></i>
           </div>
         </div>
@@ -119,14 +125,18 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Include retina.js -->
     <script type="text/javascript" src="bower_components/retinajs/dist/retina.js"></script>
+    <!-- Include Backstretch -->
+    <script src="bower_components/jquery-backstretch/jquery.backstretch.min.js"></script>
 
     <!-- Custom Javascript -->
     <script type="text/javascript">
     $(document).ready(function(){
+      // Sign in/up tabs
       $('.home-tabs li').click(function(){
         _ = $(this);
         $('.home-tabs li').removeClass('home-tabs-active');
         _.addClass('home-tabs-active');
+        flex = $('.sf-markets-carousel');
 
         if (_.hasClass('signin')) {
           $('#signup').hide();
@@ -136,6 +146,9 @@
           $('#signup').show();
         }
       });
+
+      // SF markets courousel
+      $('.sf-markets-carousel').backstretch('img/online-shopping.jpg');
     });
     </script>
   </body>

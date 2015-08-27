@@ -24,6 +24,10 @@ p {
 }
 
 /*Margin options*/
+.m-b-xl {
+  margin-bottom: 5.625em;
+}
+
 .m-b-lg {
   margin-bottom: 1.875em;
 }
@@ -81,6 +85,38 @@ p {
   padding-top: 0.625em;
 }
 
+/*Equal height columns*/
+.row-eq-height {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display:         flex !important;
+}
+/*#eq-h-row {
+    display: table;
+}
+
+#eq-h-row .eq-h-panel {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}*/
+
+/*Background image*/
+.sf-markets-carousel {
+  /*margin: -30px 0 -30px -16px;*/
+}
+
+.sf-markets-carousel-sm {
+  /*margin: -30px -16px 0 -16px;*/
+  height: 80vh;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
 /*Sign In or Up Tabs*/
 ul.home-tabs {
   padding: 0;
@@ -130,7 +166,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
   outline: none;
-  border-bottom: 2px solid #28aadc;
+  border-bottom: 1px solid #28aadc;
 }
 
 #signin {
@@ -187,4 +223,15 @@ footer ul {
 
 footer li {
   list-style: none;
+}
+
+.social-icons {
+  font-size: 1.25em;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  footer {
+    text-align: center;
+  }
 }
