@@ -153,6 +153,10 @@ p {
   line-height: 50px;
 }
 
+.sf-nav-mobile li.mobile-menu {
+  margin-right: 10px;
+}
+
 .sf-nav-mobile li:first-child {
   float: left;
   padding-bottom: 15px;
