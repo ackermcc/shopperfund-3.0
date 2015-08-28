@@ -151,11 +151,14 @@
 
       // Mobile menu
       $('.mobile-menu').click(function(){
-        var phoneMenu = $('.phone-menu');
+        var phoneMenu = $('.phone-menu'),
+        menuIcon = $('.mobile-menu');
         if (!phoneMenu.is(':visible')) {
             phoneMenu.slideDown();
+            menuIcon.css('color','#aaa');
         } else {
           phoneMenu.slideUp();
+          menuIcon.css('color','#000');
         }
       });
 
