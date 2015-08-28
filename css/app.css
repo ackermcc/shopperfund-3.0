@@ -171,6 +171,29 @@ p {
   text-decoration: none;
 }
 
+.phone-menu {
+  display: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.phone-menu li {
+  border-bottom: 1px solid #ccc;
+  list-style: none;
+  padding: 10px;
+  text-align: center;
+}
+
+.phone-menu li:last-child {
+  border: none;
+}
+
+.phone-menu li a {
+  color: #000;
+  text-decoration: none;
+}
+
 /*Sign In or Up Tabs*/
 ul.home-tabs {
   padding: 0;

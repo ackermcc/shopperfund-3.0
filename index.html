@@ -40,6 +40,13 @@
             <li class="hidden-lg hidden-md hidden-sm mobile-menu"><i class="fa fa-bars"></i></li>
           </ul>
         </div>
+        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm">
+          <ul class="phone-menu">
+            <li><a href="">How It Works</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Blog</a></li>
+          </ul>
+        </div>
         <div class="col-sm-12 col-xs-12 sf-markets-carousel sf-markets-carousel-sm nopadding">
 
         </div>
@@ -139,6 +146,16 @@
         } else {
           $('#signin').hide();
           $('#signup').show();
+        }
+      });
+
+      // Mobile menu
+      $('.mobile-menu').click(function(){
+        var phoneMenu = $('.phone-menu');
+        if (!phoneMenu.is(':visible')) {
+            phoneMenu.slideDown();
+        } else {
+          phoneMenu.slideUp();
         }
       });
 
