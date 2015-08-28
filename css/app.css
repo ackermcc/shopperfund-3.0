@@ -157,6 +157,10 @@ p {
   padding-bottom: 15px;
 }
 
+.sf-nav-mobile li:first-child img {
+  height: 30px;
+}
+
 .sf-nav-mobile li a {
   color: #000;
   text-decoration: none;
