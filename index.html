@@ -190,10 +190,16 @@
 
       //Responsive height issues
       //Handle on resize
+      var resize = function(h){
+        console.log("Hello" + h);
+        $('.left-container, .slick-slider, .slick-list').height(h + 30);
+      }
+
       $(window).resize(function(){
-        var h = $('.right-container').outerHeight();
-        $('.left-container, .slick-slider, .slick-list').height(h);
+        resize($('.right-container').outerHeight());
       });
+
+      resize($('.right-container').outerHeight());
 
       // SF markets courousel
       $('#home-slide').backstretch('img/online-shopping.jpg');

@@ -89,10 +89,10 @@ p {
 
 /*Equal height columns*/
 .row-eq-height {
-  display: -webkit-box !important;
+  /*display: -webkit-box !important;
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
-  display:         flex !important;
+  display:         flex !important;*/
 
   position: relative;
 }
