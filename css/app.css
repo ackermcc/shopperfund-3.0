@@ -85,22 +85,56 @@ p {
   padding-top: 0.625em;
 }
 
+/*HOMEPAGE SLIDES ***********************************/
+
 /*Equal height columns*/
 .row-eq-height {
   display: -webkit-box !important;
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
   display:         flex !important;
-}
-/*#eq-h-row {
-    display: table;
+
+  position: relative;
 }
 
-#eq-h-row .eq-h-panel {
-    float: none;
-    display: table-cell;
-    vertical-align: top;
-}*/
+/*Typography*/
+.slide-large-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.slide-body-title {
+  font-size: 3em;
+  color: #fff;
+}
+
+.slide-subtitle {
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.slide-legal-copy {
+  text-align: center;
+  color: #fff;
+  font-size: 0.75em;
+  /*position: absolute;
+  bottom: 10px;*/
+}
+
+/*Background icons*/
+.brand-logos img {
+  width: 100%;
+}
+
+.brand-m-t-xl {
+  margin-top: 6.5em;
+}
+
+.brand-m-xl {
+  margin-top: 10em;
+  margin-bottom: 2em;
+}
 
 /*Background image*/
 .sf-markets-carousel {
@@ -117,9 +151,28 @@ p {
    margin: 0 !important;
 }
 
-/*Navigation*/
-.sf-nav {
-  margin-top: 30px;
+/*Slick overrides*/
+.slick-slider{
+  height: 100%;
+}
+
+.slick-list,
+.slick-track {
+  height: 100%;
+}
+
+.slick-slide {
+  padding: 2.25em;
+}
+
+/*NAVIGATION ***************************************/
+ul.sf-nav {
+  position: absolute;
+  top: 2.25em;
+  left: 2.25em;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
 }
 
 .sf-nav li {

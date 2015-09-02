@@ -19,6 +19,10 @@
     <!-- Include Font Awesome -->
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
 
+    <!-- Include Slick carousel -->
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+    <!-- <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css"> -->
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -52,13 +56,33 @@
         </div>
       </div>
       <div class="row row-eq-height">
+        <ul class="sf-nav hidden-sm hidden-xs">
+          <li><a href="">How It Works</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Blog</a></li>
+        </ul>
         <!-- Left container, carousel -->
         <div class="col-lg-8 col-md-8 hidden-sm hidden-xs sf-markets-carousel nopadding">
-          <ul class="sf-nav">
-            <li><a href="">How It Works</a></li>
-            <li><a href="">About Us</a></li>
-            <li><a href="">Blog</a></li>
-          </ul>
+          <div id="home-slide">
+            <div class="slide-large-title m-t-md m-b-sm">Need Help <br>Paying Off Debt?</div>
+            <div class="slide-subtitle">Earn PayOff Credits<sup>®</sup> from your everyday shopping to chip away at credit cards, loans, and other debts.</div>
+            <div class="brand-logos brand-m-xl"><img src="img/brand-icons/slide1-brands.png"></div>
+          </div>
+          <div id="second-slide">
+            <div class="slide-body-title m-t-md m-b-sm">Shopperfund members<br> can earn more than <br><b>$500 in PayOff Credits<sup>®</sup></b><br> annually from their everyday <br><b>grocery shopping<sup>*</sup></b></div>
+            <div class="brand-logos brand-m-t-xl"><img src="img/brand-icons/slide1-brands.png"></div>
+            <div class="slide-legal-copy m-t-lg"><sup>*</sup>USDA Center for Nutrition Policy & Promotion, Official Food Plans U.S. Average June 2015</div>
+          </div>
+          <div id="third-slide">
+            <div class="slide-body-title m-t-md m-b-sm">Shopperfund members<br> can earn more than <br><b>$200 in PayOff Credits<sup>®</sup></b><br> annually from their everyday <br><b>gasoline purchases<sup>*</sup></b></div>
+            <div class="brand-logos brand-m-t-xl"><img src="img/brand-icons/slide2-brands.png"></div>
+            <div class="slide-legal-copy m-t-lg"><sup>*</sup>CNN Money Oil Price Information Service</div>
+          </div>
+          <div id="fourth-slide">
+            <div class="slide-body-title m-t-md m-b-sm">Shopperfund members<br> can earn more than <br><b>$200 in PayOff Credits<sup>®</sup></b><br> annually from their everyday <br><b>dining at restaurants<sup>*</sup></b></div>
+            <div class="brand-logos brand-m-t-xl"><img src="img/brand-icons/slide3-brands.png"></div>
+            <div class="slide-legal-copy m-t-lg"><sup>*</sup>2012 MSN Money Study</div>
+          </div>
         </div>
         <!-- Right container, sign in/up forms -->
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  p-lg">
@@ -129,6 +153,8 @@
     <script type="text/javascript" src="bower_components/retinajs/dist/retina.js"></script>
     <!-- Include Backstretch -->
     <script src="bower_components/jquery-backstretch/jquery.backstretch.min.js"></script>
+    <!-- Include Slick carousel -->
+    <script type="text/javascript" src="bower_components/slick-carousel/slick/slick.min.js"></script>
 
     <!-- Custom Javascript -->
     <script type="text/javascript">
@@ -163,7 +189,24 @@
       });
 
       // SF markets courousel
-      $('.sf-markets-carousel').backstretch('img/online-shopping.jpg');
+      $('#home-slide').backstretch('img/online-shopping.jpg');
+      $('#second-slide').backstretch('img/grocery.jpg');
+      $('#third-slide').backstretch('img/gasoline.jpg');
+      $('#fourth-slide').backstretch('img/dining.jpg');
+
+      $('.sf-markets-carousel').slick({
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        infinite: true,
+        speed: 400,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        // remove later
+        arrows: false,
+        mobileFirst: true
+      });
+
     });
     </script>
   </body>
