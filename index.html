@@ -62,7 +62,7 @@
           <li><a href="">Blog</a></li>
         </ul>
         <!-- Left container, carousel -->
-        <div class="col-lg-8 col-md-8 hidden-sm hidden-xs sf-markets-carousel nopadding">
+        <div class="col-lg-8 col-md-8 hidden-sm hidden-xs sf-markets-carousel nopadding left-container">
           <div id="home-slide">
             <div class="slide-large-title m-t-md m-b-sm">Need Help <br>Paying Off Debt?</div>
             <div class="slide-subtitle">Earn PayOff Credits<sup>®</sup> from your everyday shopping to chip away at credit cards, loans, and other debts.</div>
@@ -85,7 +85,7 @@
           </div>
         </div>
         <!-- Right container, sign in/up forms -->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  p-lg">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  p-lg right-container">
           <img class="m-b-lg hidden-sm hidden-xs" src="img/sf-logo.png">
           <p class="m-b-md">Simply register for a free account and earn PayOff Credits<sup>®</sup> from your everyday shopping to pay down your bills and debts every month.</p>
 
@@ -186,6 +186,13 @@
           phoneMenu.slideUp();
           menuIcon.css('color','#000');
         }
+      });
+
+      //Responsive height issues
+      //Handle on resize
+      $(window).resize(function(){
+        var h = $('.right-container').outerHeight();
+        $('.left-container, .slick-slider, .slick-list').height(h);
       });
 
       // SF markets courousel
