@@ -151,6 +151,16 @@ p {
    margin: 0 !important;
 }
 
+/*Fixed text*/
+.fixed-title {
+  font-size: 3em;
+  /*font-weight: bold;*/
+  color: #fff;
+  display: none;
+  z-index: 1000;
+  /*line-height: 62px;*/
+}
+
 /*Slick overrides*/
 .slick-slider{
   height: 100%;

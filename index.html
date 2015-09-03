@@ -61,6 +61,8 @@
           <li><a href="">About Us</a></li>
           <li><a href="">Blog</a></li>
         </ul>
+        <!-- Fixed title -->
+        <span class="fixed-title">Shopperfund members<br> can earn more than <br><b>$<span class="dollar">200</span> in PayOff Credits<sup>®</sup></b><br> annually from their everyday </span>
         <!-- Left container, carousel -->
         <div class="col-lg-8 col-md-8 hidden-sm hidden-xs sf-markets-carousel nopadding left-container">
           <div id="home-slide">
@@ -68,18 +70,21 @@
             <div class="slide-subtitle">Earn PayOff Credits<sup>®</sup> from your everyday shopping to chip away at credit cards, loans, and other debts.</div>
             <div class="brand-logos brand-m-xl"><img src="img/brand-icons/slide1-brands.png"></div>
           </div>
+
           <div id="second-slide">
-            <div class="slide-body-title m-t-md m-b-sm">Shopperfund members<br> can earn more than <br><b>$500 in PayOff Credits<sup>®</sup></b><br> annually from their everyday <br><b>grocery shopping<sup>*</sup></b></div>
+            <div class="slide-body-title m-t-md m-b-sm"><span class="hidden-title">Shopperfund members<br> can earn more than <br><b>$<span class="dollar">500</span> in PayOff Credits<sup>®</sup></b><br> annually from their everyday </span><br><b>grocery shopping<sup>*</sup></b></div>
             <div class="brand-logos brand-m-t-xl"><img src="img/brand-icons/slide1-brands.png"></div>
             <div class="slide-legal-copy m-t-lg"><sup>*</sup>USDA Center for Nutrition Policy & Promotion, Official Food Plans U.S. Average June 2015</div>
           </div>
+
           <div id="third-slide">
-            <div class="slide-body-title m-t-md m-b-sm">Shopperfund members<br> can earn more than <br><b>$200 in PayOff Credits<sup>®</sup></b><br> annually from their everyday <br><b>gasoline purchases<sup>*</sup></b></div>
+            <div class="slide-body-title m-t-md m-b-sm"><span class="hidden-title">Shopperfund members<br> can earn more than <br><b>$<span class="dollar">200</span> in PayOff Credits<sup>®</sup></b><br> annually from their everyday </span><br><b>gasoline purchases<sup>*</sup></b></div>
             <div class="brand-logos brand-m-t-xl"><img src="img/brand-icons/slide2-brands.png"></div>
             <div class="slide-legal-copy m-t-lg"><sup>*</sup>CNN Money Oil Price Information Service</div>
           </div>
+
           <div id="fourth-slide">
-            <div class="slide-body-title m-t-md m-b-sm">Shopperfund members<br> can earn more than <br><b>$200 in PayOff Credits<sup>®</sup></b><br> annually from their everyday <br><b>dining at restaurants<sup>*</sup></b></div>
+            <div class="slide-body-title m-t-md m-b-sm"><span class="hidden-title">Shopperfund members<br> can earn more than <br><b>$<span class="dollar">200</span> in PayOff Credits<sup>®</sup></b><br> annually from their everyday </span><br><b>dining at restaurants<sup>*</sup></b></div>
             <div class="brand-logos brand-m-t-xl"><img src="img/brand-icons/slide3-brands.png"></div>
             <div class="slide-legal-copy m-t-lg"><sup>*</sup>2012 MSN Money Study</div>
           </div>
@@ -190,9 +195,19 @@
 
       //Responsive height issues
       //Handle on resize
+      var hiddenTitle = $('.hidden-title');
+      var fixedTitle = $('.fixed-title');
+      var dollar = $('.dollar');
+
       var resize = function(h){
         console.log("Hello" + h);
         $('.left-container, .slick-slider, .slick-list').height(h + 30);
+
+        // Reposition title
+        fixedTitle.css({
+          top: hiddenTitle.position().top + 2,
+          left: hiddenTitle.position().left
+        });
       }
 
       $(window).resize(function(){
@@ -207,17 +222,60 @@
       $('#third-slide').backstretch('img/gasoline.jpg');
       $('#fourth-slide').backstretch('img/dining.jpg');
 
+      // Init slick
       $('.sf-markets-carousel').slick({
         dots: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 5000,
+        swipe: true,
         infinite: true,
         speed: 400,
         slidesToShow: 1,
         adaptiveHeight: true,
-        // remove later
         arrows: false,
         mobileFirst: true
+      });
+
+      // Handle static slider elements
+      var changeDollar = function(toAmount){
+        $({d: dollar.val()}).animate({d: toAmount}, {
+            duration: 400,
+            easing:'swing', // can be anything
+            step: function() { // called on every step
+                // Update the element's text with rounded-up value:
+                dollar.text(Math.floor(this.d+1));
+            }
+        });
+      }
+
+      $('.sf-markets-carousel').on('afterChange', function(event, slick, currentSlide){
+        if (currentSlide === 1) {
+          if (!fixedTitle.is(':visible')) {
+            fixedTitle.css({
+              position: 'absolute',
+              display: 'block',
+              top: hiddenTitle.position().top + 2,
+              left: hiddenTitle.position().left
+            });
+            hiddenTitle.css('opacity','0');
+          }
+          changeDollar(500.00);
+        } else if (currentSlide === 2) {
+          changeDollar(200.00);
+        } else if (currentSlide === 3) {
+          changeDollar(200.00);
+        }
+      });
+
+      $('.sf-markets-carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        if (nextSlide === 0) {
+          if (fixedTitle.is(':visible')) {
+            fixedTitle.css({
+              display: 'none'
+            });
+            hiddenTitle.css('opacity','1');
+          }
+        }
       });
 
     });
