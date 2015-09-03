@@ -309,7 +309,7 @@ input[type="text"]:focus {
   border-bottom: 1px solid #28aadc;
 }
 
-#signin {
+#signup {
   display: none;
 }
 
