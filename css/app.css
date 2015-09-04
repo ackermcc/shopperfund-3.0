@@ -118,27 +118,21 @@ p {
   text-align: center;
   color: #fff;
   font-size: 0.75em;
-  /*position: absolute;
-  bottom: 10px;*/
+  position: absolute;
+  bottom: 1em;
+  width: 90%;
 }
 
 /*Background icons*/
 .brand-logos img {
-  width: 100%;
-}
-
-.brand-m-t-xl {
-  margin-top: 6.5em;
-}
-
-.brand-m-xl {
-  margin-top: 10em;
-  margin-bottom: 2em;
+  width: 90%;
+  position: absolute;
+  bottom: 3.5em;
 }
 
 /*Background image*/
 .sf-markets-carousel {
-  /*margin: -30px 0 -30px -16px;*/
+  position: relative;
 }
 
 .sf-markets-carousel-sm {
@@ -306,11 +300,21 @@ input[type="text"] {
 
 input[type="text"]:focus {
   outline: none;
-  border-bottom: 1px solid #28aadc;
+  border-bottom: 2px solid #28aadc;
 }
 
 #signup {
   display: none;
+}
+
+.or {
+  text-align: center;
+  font-style: italic;
+  color: gray;
+}
+
+.password {
+  font-size: 12px;
 }
 
 /*Buttons*/
@@ -322,7 +326,7 @@ input[type="text"]:focus {
   display: inline-block;
   text-align: center;
   color: #fff;
-  padding: 0.3125em 0.625em 0.4375em 0.625em;
+  padding: 0.5em 0.625em 0.4375em 0.8em;
   border-radius: 3px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.13);
   cursor: pointer;
