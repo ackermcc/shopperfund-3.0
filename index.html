@@ -62,7 +62,7 @@
           <li><a href="">Blog</a></li>
         </ul>
         <!-- Fixed title -->
-        <span class="fixed-title">Shopperfund members<br> can earn more than <br><b>$<span class="dollar">200</span> in PayOff Credits<sup>®</sup></b><br> annually from their everyday</span>
+        <div class="fixed-title">Shopperfund members<br> can earn more than <br><b>$<span class="dollar">200</span> in PayOff Credits<sup>®</sup></b><br> annually from their everyday</div>
         <!-- Left container, carousel -->
         <div class="col-lg-8 col-md-8 sf-markets-carousel nopadding left-container">
           <div id="home-slide">
@@ -169,7 +169,7 @@
       // Init slick
       $('.sf-markets-carousel').slick({
         dots: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 5000,
         swipe: true,
         infinite: true,
@@ -193,7 +193,8 @@
         // Reposition title
         fixedTitle.css({
           top: hiddenTitle.position().top + 2,
-          left: hiddenTitle.position().left
+          left: hiddenTitle.position().left,
+          width: hiddenTitle.width()
         });
       }
 
