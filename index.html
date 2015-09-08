@@ -96,13 +96,13 @@
 
           <!-- Sign In OR Up -->
           <ul class="home-tabs m-b-lg">
-            <li class="home-tabs-active signin"><a href="#">Log In</a></li>
-            <li class="signup"><a href="#">Free Sign Up</a></li>
+            <li class="home-tabs-active signup"><a href="#">Free Sign Up</a></li>
+            <li class="signin"><a href="#"><i class="fa fa-sign-in"></i> Log In</a></li>
           </ul>
           <div id="home-tabs-container">
             <div id="signin">
               <label name="username"></label>
-              <input class="m-b-sm" type="text" name="username" placeholder="Username" autofocus>
+              <input class="m-b-sm" type="text" name="username" placeholder="Username">
               <label name="password"></label>
               <input type="text" name="password" placeholder="Password">
               <div class="m-t-sm"><a href="" class="password">Forgot Password?</a></div>
@@ -166,33 +166,18 @@
     <!-- Custom Javascript -->
     <script type="text/javascript">
     $(document).ready(function(){
-      // Sign in/up tabs
-      $('.home-tabs li').click(function(){
-        _ = $(this);
-        $('.home-tabs li').removeClass('home-tabs-active');
-        _.addClass('home-tabs-active');
-        flex = $('.sf-markets-carousel');
-
-        if (_.hasClass('signin')) {
-          $('#signup').hide();
-          $('#signin').show();
-        } else {
-          $('#signin').hide();
-          $('#signup').show();
-        }
-      });
-
-      // Mobile menu
-      $('.mobile-menu').click(function(){
-        var phoneMenu = $('.phone-menu'),
-        menuIcon = $('.mobile-menu');
-        if (!phoneMenu.is(':visible')) {
-            phoneMenu.slideDown();
-            menuIcon.css('color','#aaa');
-        } else {
-          phoneMenu.slideUp();
-          menuIcon.css('color','#000');
-        }
+      // Init slick
+      $('.sf-markets-carousel').slick({
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        swipe: true,
+        infinite: true,
+        speed: 400,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        arrows: false,
+        mobileFirst: true
       });
 
       //Responsive height issues
@@ -212,6 +197,39 @@
         });
       }
 
+      // Sign in/up tabs
+      $('.home-tabs li').click(function(){
+        _ = $(this);
+        $('.home-tabs li').removeClass('home-tabs-active');
+        _.addClass('home-tabs-active');
+        flex = $('.sf-markets-carousel');
+
+        if (_.hasClass('signin')) {
+          $('#signup').hide();
+          $('#signin').fadeIn(function(){
+            $('#home-tabs-container').find('input:first').focus();
+          });
+        } else {
+          $('#signin').hide();
+          $('#signup').fadeIn();
+        }
+        $('.sf-markets-carousel').resize();
+        resize($('.right-container').outerHeight());
+      });
+
+      // Mobile menu
+      $('.mobile-menu').click(function(){
+        var phoneMenu = $('.phone-menu'),
+        menuIcon = $('.mobile-menu');
+        if (!phoneMenu.is(':visible')) {
+            phoneMenu.slideDown();
+            menuIcon.css('color','#aaa');
+        } else {
+          phoneMenu.slideUp();
+          menuIcon.css('color','#000');
+        }
+      });
+
       $(window).resize(function(){
         resize($('.right-container').outerHeight());
       });
@@ -223,20 +241,6 @@
       $('#second-slide').backstretch('img/grocery.jpg');
       $('#third-slide').backstretch('img/gasoline.jpg');
       $('#fourth-slide').backstretch('img/dining.jpg');
-
-      // Init slick
-      $('.sf-markets-carousel').slick({
-        dots: false,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        swipe: true,
-        infinite: true,
-        speed: 400,
-        slidesToShow: 1,
-        adaptiveHeight: true,
-        arrows: false,
-        mobileFirst: true
-      });
 
       // Handle static slider elements
       var changeDollar = function(toAmount){

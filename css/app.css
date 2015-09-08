@@ -265,6 +265,8 @@ ul.home-tabs li {
 
 ul.home-tabs li a {
   text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 4px;
   color: #b3b3b3;
 }
 
@@ -303,7 +305,7 @@ input[type="text"]:focus {
   border-bottom: 2px solid #28aadc;
 }
 
-#signup {
+#signin {
   display: none;
 }
 
