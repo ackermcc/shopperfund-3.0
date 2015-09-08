@@ -124,10 +124,14 @@ p {
 }
 
 /*Background icons*/
-.brand-logos img {
+.brand-logos {
   width: 90%;
   position: absolute;
   bottom: 3.5em;
+}
+
+.brand-logos img {
+  width: 100%;
 }
 
 /*Background image*/
@@ -148,11 +152,9 @@ p {
 /*Fixed text*/
 .fixed-title {
   font-size: 3em;
-  /*font-weight: bold;*/
   color: #fff;
   display: none;
   z-index: 1000;
-  /*line-height: 62px;*/
 }
 
 /*Slick overrides*/
@@ -379,5 +381,77 @@ footer li {
 @media (min-width: @screen-sm-min) {
   footer {
     text-align: center;
+  }
+}
+
+
+/*RESPONSIVE MEDIA QUERIES   ***************************************/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .sf-markets-carousel {
+    text-align: center;
+  }
+
+  .slide-large-title {
+    font-size: 2.75em;
+    margin-top: 0 !important;
+    margin-bottom: 0.275em !important;
+  }
+
+  .slide-subtitle {
+    font-size: 1.25em;
+  }
+
+  .slide-body-title {
+    margin: 0 !important;
+    font-size: 2.25em;
+  }
+
+  .fixed-title {
+    margin: 0 !important;
+    font-size: 2.25em;
+    text-align: center;
+  }
+
+  .brand-logos img {
+    bottom: 2.75em;
+    width: 67%;
+    margin: auto;
+  }
+}
+
+
+/* Extra small devices (phones, 768px and down) */
+@media (max-width: 767px) {
+  .sf-markets-carousel {
+    text-align: center;
+  }
+
+  .slide-large-title {
+    font-size: 2em;
+    margin-top: 0 !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .slide-subtitle {
+    font-size: 1.5em;
+  }
+
+  .slide-body-title {
+    margin: 0 !important;
+    font-size: 1.75em;
+  }
+
+  .fixed-title {
+    margin: 0 !important;
+    font-size: 1.75em;
+    text-align: center;
+  }
+
+  .brand-logos img {
+    bottom: 2.75em;
+    width: 100%;
+    margin: auto;
   }
 }
