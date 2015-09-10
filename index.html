@@ -168,7 +168,7 @@
       // Init slick
       $('.sf-markets-carousel').slick({
         dots: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 5000,
         swipe: true,
         infinite: true,
@@ -193,7 +193,7 @@
         fixedTitle.css({
           top: hiddenTitle.position().top + 2,
           left: hiddenTitle.position().left,
-          width: hiddenTitle.width()
+          width: Math.abs(hiddenTitle.width()) + 1
         });
       }
 
