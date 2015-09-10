@@ -378,8 +378,19 @@ footer li {
   list-style: none;
 }
 
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: gray;
+}
+
 .social-icons {
   font-size: 1.25em;
+  float: right;
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -462,5 +473,21 @@ footer li {
     bottom: 2.75em;
     width: 100%;
     margin: auto;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  footer a {
+    font-size: 1.5em;
+  }
+
+  footer li {
+    margin-bottom: 1em;
+  }
+
+  .social-icons {
+    float: none;
   }
 }
