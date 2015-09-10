@@ -38,7 +38,7 @@
         <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
           <ul class="sf-nav-mobile">
             <li><img src="img/sf-logo.png"></li>
-            <li class="hidden-xs"><a href="">How It Works</a></li>
+            <li class="hidden-xs"><a href="">FAQs</a></li>
             <li class="hidden-xs"><a href="">About Us</a></li>
             <li class="hidden-xs"><a href="">Blog</a></li>
             <li class="hidden-lg hidden-md hidden-sm mobile-menu"><i class="fa fa-bars"></i></li>
@@ -46,7 +46,7 @@
         </div>
         <div class="col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm">
           <ul class="phone-menu">
-            <li><a href="">How It Works</a></li>
+            <li><a href="">FAQs</a></li>
             <li><a href="">About Us</a></li>
             <li><a href="">Blog</a></li>
           </ul>
@@ -57,7 +57,7 @@
       </div>
       <div class="row row-eq-height">
         <ul class="sf-nav hidden-sm hidden-xs">
-          <li><a href="">How It Works</a></li>
+          <li><a href="">FAQs</a></li>
           <li><a href="">About Us</a></li>
           <li><a href="">Blog</a></li>
         </ul>
@@ -131,12 +131,11 @@
                 <li>About Us</li>
                 <li>Blog</li>
                 <li>Privacy Policy</li>
-                <li>Return Policy</li>
+                <li>FAQ</li>
               </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
               <ul>
-                <li>FAQ</li>
                 <li>Careers</li>
                 <li>Contact Us</li>
                 <li>Copyright ©Shopperfund 2015</li>
@@ -251,6 +250,13 @@
             step: function() { // called on every step
                 // Update the element's text with rounded-up value:
                 dollar.text(Math.floor(this.d+1));
+            },
+            complete: function(){
+              console.log(dollar.val());
+              if (dollar.val() !== toAmount) {
+                console.log(dollar.val() + ' ' + toAmount);
+                dollar.text(toAmount);
+              }
             }
         });
       }
