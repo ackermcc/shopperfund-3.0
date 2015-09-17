@@ -38,6 +38,7 @@
         <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
           <ul class="sf-nav-mobile">
             <li><img src="img/sf-logo.png"></li>
+            <li class="hidden-xs"><a href="#" class="signin home-tabs"><i class="fa fa-lock"></i> Log In</a></li>
             <li class="hidden-xs"><a href="https://shopperfund.com/Home/FAQ">FAQs</a></li>
             <li class="hidden-xs"><a href="https://shopperfund.com/Home/AboutUs">About Us</a></li>
             <li class="hidden-xs"><a href="http://shopperfund.com/blog">Blog</a></li>
@@ -46,6 +47,7 @@
         </div>
         <div class="col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm">
           <ul class="phone-menu">
+            <li><a href="#" class="signin home-tabs"><i class="fa fa-lock"></i> Log In</a></li>
             <li><a href="https://shopperfund.com/Home/FAQ">FAQs</a></li>
             <li><a href="https://shopperfund.com/Home/AboutUs">About Us</a></li>
             <li><a href="http://shopperfund.com/blog">Blog</a></li>
@@ -57,6 +59,7 @@
       </div>
       <div class="row row-eq-height">
         <ul class="sf-nav hidden-sm hidden-xs">
+          <li class="hidden-xs"><a href="#" class="signin home-tabs"><i class="fa fa-lock"></i> Log In</a></li>
           <li><a href="https://shopperfund.com/Home/FAQ">FAQs</a></li>
           <li><a href="https://shopperfund.com/Home/AboutUs">About Us</a></li>
           <li><a href="http://shopperfund.com/blog">Blog</a></li>
@@ -95,26 +98,28 @@
           <p class="m-b-md">Simply register for a free account and earn PayOff Credits<sup>®</sup> from your everyday shopping to pay down your bills and debts every month.</p>
 
           <!-- Sign In OR Up -->
-          <ul class="home-tabs m-b-lg">
+          <!-- <ul class="home-tabs m-b-lg">
             <li class="home-tabs-active signup"><a href="#">Free Sign Up</a></li>
             <li class="signin"><a href="#"><i class="fa fa-sign-in"></i> Log In</a></li>
-          </ul>
+          </ul> -->
           <div id="home-tabs-container">
             <div id="signin">
+              <div class="btn fb-btn m-t-sm m-b-lg full-width"><i class="fa fa-facebook-square"></i> Sign In with Facebook</div>
               <label name="username"></label>
               <input class="m-b-sm" type="text" name="username" placeholder="Username">
               <label name="password"></label>
               <input type="text" name="password" placeholder="Password">
               <div class="m-t-sm"><a href="" class="password">Forgot Password?</a></div>
-              <div class="btn primary-btn m-t-lg full-width"><i class="fa fa-envelope"></i> Sign In</div>
-              <div class="btn fb-btn m-t-sm m-b-lg full-width"><i class="fa fa-facebook-square"></i> Sign In with Facebook</div>
+              <div class="btn primary-btn m-t-sm m-b-lg full-width"><i class="fa fa-envelope"></i> Sign In</div>
+              <div class="btn tertiary-btn m-b-xl full-width signup home-tabs">New Here? Sign up for a free account</div>
             </div>
             <div id="signup">
-              <div class="btn fb-btn m-t-sm m-b-md full-width"><i class="fa fa-facebook-square"></i> Sign Up with Facebook</div>
-              <div class="m-b-md or">or</div>
+              <div class="btn fb-btn m-t-sm m-b-sm full-width"><i class="fa fa-facebook-square"></i> Sign Up with Facebook</div>
+              <!-- <div class="m-b-md or">or</div>
               <label name="email"></label>
-              <input type="text" name="email" placeholder="Enter email address">
-              <div class="btn primary-btn m-t-md full-width"><i class="fa fa-envelope"></i> Sign Up</div>
+              <input type="text" name="email" placeholder="Enter email address"> -->
+              <div class="btn primary-btn m-b-lg full-width"><i class="fa fa-envelope"></i> Sign Up with email</div>
+              <div class="btn tertiary-btn m-b-xl full-width signin home-tabs">Already have an account? Log In</div>
             </div>
           </div>
         </div>
@@ -198,13 +203,14 @@
       }
 
       // Sign in/up tabs
-      $('.home-tabs li').click(function(){
+      $('.home-tabs').click(function(){
         _ = $(this);
-        $('.home-tabs li').removeClass('home-tabs-active');
-        _.addClass('home-tabs-active');
+        // $('.home-tabs li').removeClass('home-tabs-active');
+        // _.addClass('home-tabs-active');
         flex = $('.sf-markets-carousel');
 
         if (_.hasClass('signin')) {
+          console.log('hello');
           $('#signup').hide();
           $('#signin').fadeIn(function(){
             $('#home-tabs-container').find('input:first').focus();

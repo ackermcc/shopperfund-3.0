@@ -352,6 +352,18 @@ input[type="text"]:focus {
   border: 1px solid #b26328;
 }
 
+.tertiary-btn {
+  color: #28aadc;
+  border: 1px solid #28aadc;
+  /*override shadow*/
+  box-shadow: none;
+}
+
+.tertiary-btn:hover {
+  color: #28aadc;
+  background: #f5f5f7;
+}
+
 .fb-btn {
   background: #3b5998;
   border: 1px solid #627aad;
